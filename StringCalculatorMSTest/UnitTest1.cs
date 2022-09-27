@@ -68,5 +68,27 @@ namespace StringCalculatorMSTest
             }
 
         }
+
+        [TestMethod]
+        public void Add_MultipleNagatives_ExceptionThrowed()
+        {
+            StringCalculator calc = new StringCalculator();
+
+            try
+            {
+                calc.Add("-5, -3, -5");
+
+                Assert.Fail();
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (Exception e)
+            {
+                Assert.Fail();
+            }
+
+        }
     }
 }
