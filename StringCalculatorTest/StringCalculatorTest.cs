@@ -32,8 +32,13 @@ namespace StringCalculatorTest
             Assert.AreEqual(calc.Add("13,26"), 39);
         }
 
-        
+        [Test]
+        public void Add_NumbersWithNewLine_SumReturned()
+        {
+            StringCalculator calc = new StringCalculator();
 
+            Assert.AreEqual(calc.Add("1\n2,3"), 6);
+        }
 
     }
 }
