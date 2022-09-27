@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace StringCalculatorLibrary
 {
@@ -17,6 +18,8 @@ namespace StringCalculatorLibrary
                 delimiters[2] = numbers[2];
             }
 
+            bool isHasNegatives = false;
+            List<int> negativeNumbers = new List<int>();
             foreach (var number in numbers.Split(delimiters))
             {
                 int num;
@@ -24,11 +27,24 @@ namespace StringCalculatorLibrary
                 if (int.TryParse(number, out num))
                 {
                     if (num < 0)
-                        throw new ArgumentException("Negatives not allowed: " + num);
+                    {
+                        isHasNegatives = true;
+                        negativeNumbers.Add(num);
+                    }
 
                     result += num;
                 }
-                    
+
+            }
+
+            if (isHasNegatives)
+            {
+                StringBuilder negatives = new StringBuilder();
+
+                foreach (var negativeNumber in negativeNumbers)
+                    negatives.Append(negativeNumber);
+
+                throw new ArgumentException("Negatives not allowed: " + negatives.ToString());
             }
 
             return result;
