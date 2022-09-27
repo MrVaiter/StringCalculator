@@ -22,7 +22,10 @@ namespace StringCalculatorLibrary
                 int num;
 
                 if (int.TryParse(number, out num))
+                {
                     result += num;
+                }
+                    
             }
 
             return result;

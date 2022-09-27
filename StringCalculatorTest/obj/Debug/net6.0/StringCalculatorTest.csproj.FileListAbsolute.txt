@@ -100,3 +100,6 @@ D:\VS Projects\StringCalculator\StringCalculatorTest\obj\Debug\net6.0\StringCalc
 D:\VS Projects\StringCalculator\StringCalculatorTest\obj\Debug\net6.0\ref\StringCalculatorTest.dll
 D:\VS Projects\StringCalculator\StringCalculatorTest\obj\Debug\net6.0\StringCalculatorTest.pdb
 D:\VS Projects\StringCalculator\StringCalculatorTest\obj\Debug\net6.0\StringCalculatorTest.genruntimeconfig.cache
+D:\VS Projects\StringCalculator\StringCalculatorTest\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\VS Projects\StringCalculator\StringCalculatorTest\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\VS Projects\StringCalculator\StringCalculatorTest\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml

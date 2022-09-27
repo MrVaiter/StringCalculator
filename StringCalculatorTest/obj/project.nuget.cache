@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pUpMDUbVAjdN3pnXhkW6spfI9vkWfoey3vOeZnG1kJoF0OwBW1KbahexX6AKs+AQIl2vKlUNZUVfMclWbftATw==",
+  "dgSpecHash": "8qtLUExiI8g6jTTZVWc7mu4x3SoWjz0uR82UtbLClsTc26xsz4uBAYi+XIEtnPbydjYo6g2SzFpzAWe9XNgd2Q==",
   "success": true,
   "projectFilePath": "D:\\VS Projects\\StringCalculator\\StringCalculatorTest\\StringCalculatorTest.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "C:\\Users\\mrvai\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
     "C:\\Users\\mrvai\\.nuget\\packages\\microsoft.testplatform.objectmodel\\16.11.0\\microsoft.testplatform.objectmodel.16.11.0.nupkg.sha512",
     "C:\\Users\\mrvai\\.nuget\\packages\\microsoft.testplatform.testhost\\16.11.0\\microsoft.testplatform.testhost.16.11.0.nupkg.sha512",
+    "C:\\Users\\mrvai\\.nuget\\packages\\mstest.testframework\\2.2.10\\mstest.testframework.2.2.10.nupkg.sha512",
     "C:\\Users\\mrvai\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
     "C:\\Users\\mrvai\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
     "C:\\Users\\mrvai\\.nuget\\packages\\nuget.frameworks\\5.0.0\\nuget.frameworks.5.0.0.nupkg.sha512",
