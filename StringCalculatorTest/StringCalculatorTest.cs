@@ -40,5 +40,13 @@ namespace StringCalculatorTest
             Assert.AreEqual(calc.Add("1\n2,3"), 6);
         }
 
+        [Test]
+        public void Add_DifferentDelimiters_SumReturned()
+        {
+            StringCalculator calc = new StringCalculator();
+
+            Assert.AreEqual(calc.Add("//;\n1;2"), 3);
+        }
+
     }
 }
