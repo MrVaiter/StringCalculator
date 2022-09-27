@@ -1,0 +1,12 @@
+D:\VS Projects\StringCalculator\StringCalculator\bin\Debug\net6.0\StringCalculator.deps.json
+D:\VS Projects\StringCalculator\StringCalculator\bin\Debug\net6.0\StringCalculator.dll
+D:\VS Projects\StringCalculator\StringCalculator\bin\Debug\net6.0\ref\StringCalculator.dll
+D:\VS Projects\StringCalculator\StringCalculator\bin\Debug\net6.0\StringCalculator.pdb
+D:\VS Projects\StringCalculator\StringCalculator\obj\Debug\net6.0\StringCalculator.csproj.AssemblyReference.cache
+D:\VS Projects\StringCalculator\StringCalculator\obj\Debug\net6.0\StringCalculator.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS Projects\StringCalculator\StringCalculator\obj\Debug\net6.0\StringCalculator.AssemblyInfoInputs.cache
+D:\VS Projects\StringCalculator\StringCalculator\obj\Debug\net6.0\StringCalculator.AssemblyInfo.cs
+D:\VS Projects\StringCalculator\StringCalculator\obj\Debug\net6.0\StringCalculator.csproj.CoreCompileInputs.cache
+D:\VS Projects\StringCalculator\StringCalculator\obj\Debug\net6.0\StringCalculator.dll
+D:\VS Projects\StringCalculator\StringCalculator\obj\Debug\net6.0\ref\StringCalculator.dll
+D:\VS Projects\StringCalculator\StringCalculator\obj\Debug\net6.0\StringCalculator.pdb
