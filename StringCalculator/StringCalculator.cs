@@ -12,9 +12,17 @@ namespace StringCalculatorLibrary
             if (numbers == "")
                 return 0;
 
+            if (numbers.Contains("//"))
+            {
+                delimiters[2] = numbers[2];
+            }
+
             foreach (var number in numbers.Split(delimiters))
             {
-                result += int.Parse(number);
+                int num;
+
+                if (int.TryParse(number, out num))
+                    result += num;
             }
 
             return result;
