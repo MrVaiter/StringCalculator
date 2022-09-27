@@ -53,6 +53,7 @@ namespace StringCalculatorMSTest
         {
             StringCalculator calc = new StringCalculator();
 
+            calc.Add("-5, 3");
         }
     }
 }

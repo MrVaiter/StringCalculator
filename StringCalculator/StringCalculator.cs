@@ -23,6 +23,9 @@ namespace StringCalculatorLibrary
 
                 if (int.TryParse(number, out num))
                 {
+                    if (num < 0)
+                        throw new ArgumentException();
+
                     result += num;
                 }
                     
