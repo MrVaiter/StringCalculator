@@ -48,12 +48,25 @@ namespace StringCalculatorMSTest
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void Add_NegativeNumber_ExceptionThrowed()
         {
             StringCalculator calc = new StringCalculator();
 
-            calc.Add("-5, 3");
+            try
+            {
+                calc.Add("-5, 3");
+
+                Assert.Fail();
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (Exception e)
+            {
+                Assert.Fail();
+            }
+
         }
     }
 }
