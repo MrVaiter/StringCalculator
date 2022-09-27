@@ -47,12 +47,12 @@ namespace StringCalculatorMSTest
             Assert.AreEqual(calc.Add("//;\n1;2"), 3);
         }
 
-        //[TestMethod]
-        //[ExpectedException(typeof(ArgumentException))]
-        //public void Add_NegativeNumber_ExceptionThrowed()
-        //{
-        //    StringCalculator calc = new StringCalculator();
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void Add_NegativeNumber_ExceptionThrowed()
+        {
+            StringCalculator calc = new StringCalculator();
 
-        //}
+        }
     }
 }
