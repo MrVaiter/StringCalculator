@@ -7,14 +7,12 @@ namespace StringCalculatorLibrary
         public int Add(string numbers)
         {
             int result = 0;
+            char[] delimiters = new char[3] {',', '\n', ' '};
 
             if (numbers == "")
                 return 0;
 
-            if (!numbers.Contains(","))
-                return int.Parse(numbers);
-
-            foreach (var number in numbers.Split(',', '\n'))
+            foreach (var number in numbers.Split(delimiters))
             {
                 result += int.Parse(number);
             }
