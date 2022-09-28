@@ -90,5 +90,17 @@ namespace StringCalculatorMSTest
             }
 
         }
+
+        [TestMethod]
+        public void GetCalledCount_TwoReturned()
+        {
+            StringCalculator calc = new StringCalculator();
+
+            calc.Add("//;\n1;2");
+            calc.Add("1\n2,3");
+
+            Assert.AreEqual(calc.GetCalledCount(), 2);
+
+        }
     }
 }

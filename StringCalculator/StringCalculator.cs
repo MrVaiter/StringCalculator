@@ -5,6 +5,11 @@ namespace StringCalculatorLibrary
 {
     public class StringCalculator
     {
+        public int GetCalledCount()
+        {
+            return 0;
+        }
+
         public (bool isHasNegatives, StringBuilder negativeNumbers) NegativesNumbersCheck(List<int> numbers)
         {
             bool isHasNegatives = false;
