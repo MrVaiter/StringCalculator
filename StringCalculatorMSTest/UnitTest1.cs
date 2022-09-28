@@ -71,7 +71,7 @@ namespace StringCalculatorMSTest
         }
 
         [TestMethod]
-        public void Add_MultipleNagatives_ExceptionThrowed()
+        public void Add_MultipleNegatives_ExceptionThrowed()
         {
             StringCalculator calc = new StringCalculator();
 
@@ -138,6 +138,7 @@ namespace StringCalculatorMSTest
             Assert.AreEqual(6, calc.Add("//[***]\n1***2***3"));
         }
 
+        [TestMethod]
         public void Add_MultypleDelimiters_SumReturned()
         {
             StringCalculator calc = new StringCalculator();

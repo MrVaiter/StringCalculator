@@ -34,25 +34,45 @@ namespace StringCalculatorLibrary
         public string[] SetUpDelimiters(string numbers)
         {
             List<string> delimiters = new List<string>();
+            bool writeDelimiter = false;
 
             delimiters.Add(",");
             delimiters.Add("\n");
 
-            if (numbers.Contains("//["))
+            if (numbers.Contains("//"))
             {
-                int indexOfDelimiterBegin = numbers.IndexOf("[") + 1;
-                int indexOfDelimiterEnd = numbers.IndexOf("]");
-                int delimiterLength = indexOfDelimiterEnd - indexOfDelimiterBegin;
 
-                delimiters.Add(numbers.Substring(indexOfDelimiterBegin, delimiterLength));
-            }
-            else
-            {
-                if (numbers.Contains("//"))
+                if (numbers.Contains("["))
+                {
+                    StringBuilder delimiter = new StringBuilder();
+                    foreach(var letter in numbers.Substring(2))
+                    {
+                        if(letter == '[')
+                        {
+                            writeDelimiter = true;
+                            continue;
+                        }
+
+                        if (letter == ']')
+                        {
+                            delimiters.Add(delimiter.ToString());
+                            writeDelimiter = false;
+                            delimiter.Clear();
+                        }
+
+                        if (writeDelimiter)
+                        {
+                            delimiter.Append(letter);
+                        }
+                    }
+                }
+                else
                 {
                     int delimiterIndex = 2;
                     delimiters.Add(numbers[delimiterIndex].ToString());
                 }
+
+
             }
 
             return delimiters.ToArray();
