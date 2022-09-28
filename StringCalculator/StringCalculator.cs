@@ -31,7 +31,32 @@ namespace StringCalculatorLibrary
             return (isHasNegatives, negatives);
         }
 
-        
+        public string[] SetUpDelimiters(string numbers)
+        {
+            List<string> delimiters = new List<string>();
+
+            delimiters.Add(",");
+            delimiters.Add("\n");
+
+            if (numbers.Contains("//["))
+            {
+                int indexOfDelimiterBegin = numbers.IndexOf("[") + 1;
+                int indexOfDelimiterEnd = numbers.IndexOf("]");
+                int delimiterLength = indexOfDelimiterEnd - indexOfDelimiterBegin;
+
+                delimiters.Add(numbers.Substring(indexOfDelimiterBegin, delimiterLength));
+            }
+            else
+            {
+                if (numbers.Contains("//"))
+                {
+                    int delimiterIndex = 2;
+                    delimiters.Add(numbers[delimiterIndex].ToString());
+                }
+            }
+
+            return delimiters.ToArray();
+        }
 
         public int Add(string numbers)
         {
@@ -43,10 +68,10 @@ namespace StringCalculatorLibrary
                 return addingResult;
 
             // Set up the delimeters
-            var delimeters = SetUpDelimiters(numbers);
+            var delimiters = SetUpDelimiters(numbers);
 
             // Split string into numbers
-            var stringNumbers = numbers.Split(delimiters);
+            var stringNumbers = numbers.Split(delimiters, StringSplitOptions.None);
 
             // Getting the numbers
             List<int> intNumbers = new List<int>();
