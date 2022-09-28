@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StringCalculatorLibrary;
 
@@ -103,7 +104,25 @@ namespace StringCalculatorMSTest
 
         }
 
-        
+        [TestMethod]
+        public void CallTheEvent_MessageIsShown()
+        {
+            StringCalculator calc = new StringCalculator();
+            StringBuilder result = new StringBuilder();
+
+            calc.AddOccured += delegate (string message, int count)
+            {
+                result.Append(message).Append(count).Append(" times\n");
+            };
+
+            calc.Add("//;\n1;2");
+            calc.Add("1\n2,3");
+
+            Assert.AreEqual(result.ToString(), "Method is called 1 times\nMethod is called 2 times\n");
+
+        }
+
+
 
     }
 }
