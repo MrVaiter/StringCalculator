@@ -122,7 +122,13 @@ namespace StringCalculatorMSTest
 
         }
 
+        [TestMethod]
+        public void Add_BigNumbers_BigNumbersIgnored()
+        {
+            StringCalculator calc = new StringCalculator();
 
+            Assert.AreEqual(calc.Add("1\n2000,3"), 4);
+        }
 
     }
 }
