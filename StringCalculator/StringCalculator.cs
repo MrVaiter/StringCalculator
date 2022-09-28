@@ -31,6 +31,8 @@ namespace StringCalculatorLibrary
             return (isHasNegatives, negatives);
         }
 
+        
+
         public int Add(string numbers)
         {
             calledCount++;
@@ -41,11 +43,7 @@ namespace StringCalculatorLibrary
                 return addingResult;
 
             // Set up the delimeters
-            char[] delimiters = new char[3] {',', '\n', ' '};
-            if (numbers.Contains("//"))
-            {
-                delimiters[2] = numbers[2];
-            }
+            var delimeters = SetUpDelimiters(numbers);
 
             // Split string into numbers
             var stringNumbers = numbers.Split(delimiters);

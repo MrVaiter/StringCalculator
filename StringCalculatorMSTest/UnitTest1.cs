@@ -130,5 +130,13 @@ namespace StringCalculatorMSTest
             Assert.AreEqual(calc.Add("1\n2000,3"), 4);
         }
 
+        [TestMethod]
+        public void Add_LongDelimiters_WorkingCorrectly()
+        {
+            StringCalculator calc = new StringCalculator();
+
+            Assert.AreEqual(6, calc.Add("//[***]\n1***2***3"));
+        }
+
     }
 }
