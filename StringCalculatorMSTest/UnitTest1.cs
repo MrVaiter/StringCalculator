@@ -146,5 +146,12 @@ namespace StringCalculatorMSTest
             Assert.AreEqual(6, calc.Add("//[*][%]\n1*2%3"));
         }
 
+        [TestMethod]
+        public void Add_MultypleLongDelimiters_SumReturned()
+        {
+            StringCalculator calc = new StringCalculator();
+
+            Assert.AreEqual(6, calc.Add("“//[**][%%]\n1**2%%3"));
+        }
     }
 }
