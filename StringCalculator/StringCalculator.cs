@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Linq;
 
 namespace StringCalculatorLibrary
 {
@@ -66,7 +67,11 @@ namespace StringCalculatorLibrary
                 throw new ArgumentException("Negatives not allowed: " + negatives.negativeNumbers.ToString());
 
             // Getting the sum of numbers
-            addingResult = intNumbers.Sum();
+            var numberSum = from number in intNumbers
+                            where number <= 1000
+                            select number;
+
+            addingResult = numberSum.Sum();
 
             // Trigger an event
             AddOccured?.Invoke("Method is called ", GetCalledCount());
