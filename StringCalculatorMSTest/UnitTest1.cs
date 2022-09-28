@@ -131,11 +131,18 @@ namespace StringCalculatorMSTest
         }
 
         [TestMethod]
-        public void Add_LongDelimiters_WorkingCorrectly()
+        public void Add_LongDelimiters_SumReturned()
         {
             StringCalculator calc = new StringCalculator();
 
             Assert.AreEqual(6, calc.Add("//[***]\n1***2***3"));
+        }
+
+        public void Add_MultypleDelimiters_SumReturned()
+        {
+            StringCalculator calc = new StringCalculator();
+
+            Assert.AreEqual(6, calc.Add("//[*][%]\n1*2%3"));
         }
 
     }
