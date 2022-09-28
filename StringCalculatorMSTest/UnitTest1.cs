@@ -102,5 +102,8 @@ namespace StringCalculatorMSTest
             Assert.AreEqual(calc.GetCalledCount(), 2);
 
         }
+
+        
+
     }
 }

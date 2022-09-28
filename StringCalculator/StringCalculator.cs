@@ -7,6 +7,8 @@ namespace StringCalculatorLibrary
     {
         private int calledCount = 0;
 
+        public event Action<string, int> AddOccured = null;
+
         public int GetCalledCount()
         {
             return calledCount;
@@ -65,6 +67,9 @@ namespace StringCalculatorLibrary
 
             // Getting the sum of numbers
             addingResult = intNumbers.Sum();
+
+            // Trigger an event
+            AddOccured?.Invoke("Method is called ", GetCalledCount());
 
             return addingResult;
         }
