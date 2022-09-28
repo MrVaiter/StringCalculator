@@ -5,7 +5,22 @@
       "ProjectGuid": "001d156d-17c5-463a-a185-4a2997a8c77a",
       "DisplayName": "StringCalculator",
       "ColorIndex": 0
+    },
+    "2e02bf24-4532-4d61-9152-2bbb0870fbb1": {
+      "ProjectGuid": "2e02bf24-4532-4d61-9152-2bbb0870fbb1",
+      "DisplayName": "StringCalculator",
+      "ColorIndex": 1
+    },
+    "c28787b1-0105-4b48-911d-876a9382568d": {
+      "ProjectGuid": "c28787b1-0105-4b48-911d-876a9382568d",
+      "DisplayName": "StringCalculatorTest",
+      "ColorIndex": 2
+    },
+    "e8bc3a35-8681-4726-b85e-7b7186cb2b7e": {
+      "ProjectGuid": "e8bc3a35-8681-4726-b85e-7b7186cb2b7e",
+      "DisplayName": "StringCalculatorMSTest",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 4
 }

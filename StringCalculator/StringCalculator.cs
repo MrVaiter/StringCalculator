@@ -5,49 +5,60 @@ namespace StringCalculatorLibrary
 {
     public class StringCalculator
     {
+        public (bool isHasNegatives, StringBuilder negativeNumbers) NegativesNumbersCheck(List<int> numbers)
+        {
+            bool isHasNegatives = false;
+            StringBuilder negatives = new StringBuilder();
+            foreach(var number in numbers)
+            {
+                if(number < 0)
+                {
+                    negatives.Append(number).Append(" ");
+                    isHasNegatives = true;
+                }                    
+            }
+
+            return (isHasNegatives, negatives);
+        }
+
         public int Add(string numbers)
         {
-            int result = 0;
-            char[] delimiters = new char[3] {',', '\n', ' '};
+            int addingResult = 0;
 
+            // If string is empty
             if (numbers == "")
-                return 0;
+                return addingResult;
 
+            // Set up the delimeters
+            char[] delimiters = new char[3] {',', '\n', ' '};
             if (numbers.Contains("//"))
             {
                 delimiters[2] = numbers[2];
             }
 
-            bool isHasNegatives = false;
-            List<int> negativeNumbers = new List<int>();
-            foreach (var number in numbers.Split(delimiters))
-            {
-                int num;
+            // Split string into numbers
+            var stringNumbers = numbers.Split(delimiters);
 
-                if (int.TryParse(number, out num))
+            // Getting the numbers
+            List<int> intNumbers = new List<int>();
+            int intNumber = 0;
+            foreach (var stringNumber in stringNumbers)
+            {
+                if (int.TryParse(stringNumber, out intNumber))
                 {
-                    if (num < 0)
-                    {
-                        isHasNegatives = true;
-                        negativeNumbers.Add(num);
-                    }
-
-                    result += num;
+                    intNumbers.Add(intNumber);
                 }
-
             }
 
-            if (isHasNegatives)
-            {
-                StringBuilder negatives = new StringBuilder();
+            // Negative numbers check
+            var negatives = NegativesNumbersCheck(intNumbers);
+            if(negatives.isHasNegatives)
+                throw new ArgumentException("Negatives not allowed: " + negatives.negativeNumbers.ToString());
 
-                foreach (var negativeNumber in negativeNumbers)
-                    negatives.Append(negativeNumber);
+            // Getting the sum of numbers
+            addingResult = intNumbers.Sum();
 
-                throw new ArgumentException("Negatives not allowed: " + negatives.ToString());
-            }
-
-            return result;
+            return addingResult;
         }
     }
 }
