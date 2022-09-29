@@ -19,6 +19,7 @@ namespace StringCalculatorLibrary
         {
             bool isHasNegatives = false;
             StringBuilder negatives = new StringBuilder();
+
             foreach(var number in numbers)
             {
                 if(number < 0)
@@ -31,48 +32,58 @@ namespace StringCalculatorLibrary
             return (isHasNegatives, negatives);
         }
 
+        public void GetComplicatedDelimiter(string numbers, ref List<string> delimiters)
+        {
+            bool writeDelimiter = false;
+            StringBuilder delimiter = new StringBuilder();
+
+            // Iterating over all letters to find delimiters
+            foreach (var letter in numbers)
+            {
+                // Start recording new delimiter
+                if (letter == '[')
+                {
+                    writeDelimiter = true;
+                    continue;
+                }
+
+                // Stop recording and save new delimiter to list
+                if (letter == ']')
+                {
+                    delimiters.Add(delimiter.ToString());
+                    writeDelimiter = false;
+                    delimiter.Clear();
+                }
+
+                // Record a symbol
+                if (writeDelimiter)
+                {
+                    delimiter.Append(letter);
+                }
+            }
+        }
+
         public string[] SetUpDelimiters(string numbers)
         {
             List<string> delimiters = new List<string>();
-            bool writeDelimiter = false;
 
+            // Adding base delimiters
             delimiters.Add(",");
             delimiters.Add("\n");
 
+            // If we have customer's one or many delimiters
             if (numbers.Contains("//"))
             {
-
+                // If we have many or long delimiter
                 if (numbers.Contains("["))
                 {
-                    StringBuilder delimiter = new StringBuilder();
-                    foreach(var letter in numbers.Substring(2))
-                    {
-                        if(letter == '[')
-                        {
-                            writeDelimiter = true;
-                            continue;
-                        }
-
-                        if (letter == ']')
-                        {
-                            delimiters.Add(delimiter.ToString());
-                            writeDelimiter = false;
-                            delimiter.Clear();
-                        }
-
-                        if (writeDelimiter)
-                        {
-                            delimiter.Append(letter);
-                        }
-                    }
+                    GetComplicatedDelimiter(numbers.Substring(2), ref delimiters);
                 }
-                else
+                else // If we have one simple delimiter
                 {
                     int delimiterIndex = 2;
                     delimiters.Add(numbers[delimiterIndex].ToString());
                 }
-
-
             }
 
             return delimiters.ToArray();
@@ -113,7 +124,6 @@ namespace StringCalculatorLibrary
             var numberSum = from number in intNumbers
                             where number <= 1000
                             select number;
-
             addingResult = numberSum.Sum();
 
             // Trigger an event
